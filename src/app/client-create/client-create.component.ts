@@ -14,11 +14,7 @@ export class ClientCreateComponent implements OnInit {
     @Input()
     clientDetails = new Client();
 
-
-    constructor(
-        public service: ClientService,
-        public router: Router
-    ) {
+    constructor(public service: ClientService, public router: Router) {
         this.clientDetails.adresse = new Adresse();
     }
 
