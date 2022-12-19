@@ -11,6 +11,7 @@ import { ClientCreateComponent } from './client-create/client-create.component';
 import { ClientEditComponent } from './client-edit/client-edit.component';
 import { ClientListComponent } from './client-list/client-list.component';
 import { ClientShowComponent } from './client-show/client-show.component';
+import { ClientCompteComponent } from './client-compte/client-compte.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ClientShowComponent } from './client-show/client-show.component';
     ClientCreateComponent,
     ClientEditComponent,
     ClientListComponent,
-    ClientShowComponent
+    ClientShowComponent,
+    ClientCompteComponent
 
 ],
   imports: [

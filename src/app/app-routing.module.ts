@@ -4,6 +4,7 @@ import { ClientCreateComponent } from './client-create/client-create.component';
 import { ClientListComponent } from './client-list/client-list.component';
 import { ClientEditComponent } from './client-edit/client-edit.component';
 import { ClientShowComponent } from './client-show/client-show.component';
+import { ClientCompteComponent } from './client-compte/client-compte.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'clients-list', component: ClientListComponent },
   { path: 'client-edit/:id', component: ClientEditComponent },
   { path: 'client-show/:id', component: ClientShowComponent },
-    
+  {path: 'client-compte/:id',component: ClientCompteComponent}
+
 ];
 
 @NgModule({

@@ -58,6 +58,12 @@ export class ClientService {
                 catchError(this.handleError)
             )
     }
+    showCompte(id:any, client: Client){
+      // return this.http.get<Client>(this.endpoint + '/clients' + id, JSON.stringify(client),this.httpOptions)
+      // .pipe(
+      //   catchError(this.handleError)
+      // )
+    }
 
     handleError(error:any) {
         let errorMessage = '';
