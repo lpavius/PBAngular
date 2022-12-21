@@ -1,4 +1,4 @@
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+<!-- <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
   <h5 class="my-0 mr-md-auto font-weight-normal">Client Management</h5>
   <nav class="my-2 my-md-0 mr-md-3">
     <a class="btn btn-warning" routerLinkActive="active" routerLink="/create-client">Create Client</a>
@@ -6,4 +6,23 @@
   <a class="btn btn-info" routerLinkActive="active" routerLink="/clients-list">Clients List</a>
 </div>
 
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> -->
+
+<div>
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a href="#" class="navbar-brand">Client Management</a>
+    <div class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a  class="btn btn-primary"  routerLinkActive="active" routerLink="/create-client" >Create Client </a>&nbsp;&nbsp;&nbsp;
+
+      </li>
+      <li class="nav-item">
+         <a class="btn btn-info" routerLinkActive="active" routerLink="/clients-list">Clients List</a>
+      </li>
+    </div>
+  </nav>
+
+  <div class="container mt-3">
+    <router-outlet></router-outlet>
+  </div>
+</div>
