@@ -7,13 +7,7 @@ export class Client {
   prenom: string='';
   telephone: string='';
   adresse: Adresse={rue:'', codePostal:'', ville:''};
-  compteCourant: CompteCourant={
-    solde: 100,
-    numeroCompte: 0
-  }
-  compteEpargne: CompteEpargne={
-    solde: 0,
-    numeroCompte: 0
-  }
+  cc: CompteCourant = { solde: 0.0, numeroCompte: 0, date: new Date(), decouvert: 0.0 }
+  compteEp: CompteEpargne={ solde: 0.0, numeroCompte: 0, date: new Date(), interet: 0}
 
 }
