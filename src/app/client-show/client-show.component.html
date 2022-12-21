@@ -6,8 +6,8 @@
 
   <div class="card-body">
     <h5 class="card-title">{{clientDetails.prenom}} {{clientDetails.nom}}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Address</h6><p class="card-text">{{clientDetails.adresse.numero}} {{clientDetails.adresse.rue}} {{clientDetails.adresse.ville}} </p>
-    <!-- <h6 class="card-subtitle mb-2 text-muted">Compte Courant</h6><p class="card-text">{{clientDetails.compteCourant.solde}} {{clientDetails.compteCourant.numeroCompte}}</p> -->
+    <h6 class="card-subtitle mb-2 text-muted">Téléphone</h6><p class="card-text">{{clientDetails.telephone}}</p>
+    <h6 class="card-subtitle mb-2 text-muted">Adresse</h6><p class="card-text">{{clientDetails.adresse.numero}} {{clientDetails.adresse.rue}} {{clientDetails.adresse.ville}} </p>
     <a href="#" class="btn btn-primary" (click)="gotoList()" >Back to client list</a>
   </div>
 </div>
