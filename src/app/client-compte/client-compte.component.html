@@ -1,31 +1,34 @@
 <h2  style="text-align: center;">Consultation d'un compte</h2>
-<div class="input-group mb-3">
-  <input type="text" class="form-conrol" placeholder="search by id" [(ngModel)] = "id">
-  <button class="btn btn-outline-secondary" type="button" >
-    search
-   </button>
-</div>
+
+<select class="form-select" (change)="onSelected($event)">
+  <option value="1">Compte Courant</option>
+  <option value="2">Compte Epargne</option>
+</select>
+
 
 <div class="container custom-container">
   <div class="col-md-12">
-
-
- <div class="card" style="width: 18rem;">
-
-  <div class="card-body">
-
-    <h6 class="card-subtitle mb-2 text-muted">Prenom: </h6> <p class="card-text">{{clientDetails.prenom}}</p>
-    <h6 class="card-subtitle mb-2 text-muted">Nom: </h6> <p class="card-text">{{clientDetails.nom}}</p>
-    <h6 class="card-subtitle mb-2 text-muted">Compte Courant: </h6>
-    <p class="card-text"> Solde: {{clientDetails.compteCourant.solde}}  N.Compte:  {{clientDetails.compteCourant.numeroCompte}}</p>
-    <h6 class="card-subtitle mb-2 text-muted">Compte Epargne: </h6>
-    <p class="card-text"> Solde: {{clientDetails.compteEpargne.solde}}  N.Compte:  {{clientDetails.compteEpargne.numeroCompte}}</p>
+    <div class="card" style="width: 18rem;">
+      <div *ngIf="selectedCompte === '1'" class="card-body">
+        <h5>Compte Courant</h5>
+        <p class="card-text">Numero de Compte : {{clientDetails.cc.numeroCompte}}</p>
+        <p class="card-text">Date d'ouverture : {{clientDetails.cc.date}}</p>
+        <!-- <h6 class="card-subtitle mb-2 text-muted">Solde : </h6> -->
+        <p class="card-text">Solde : {{clientDetails.cc.solde}}</p>
+        <!-- <h6 class="card-subtitle mb-2 text-muted">decouvert: </h6> -->
+        <p class="card-text">Découvert : {{clientDetails.cc.decouvert}}</p>
+        <p><span>You selected: </span><b>{{selectedCompte}}</b></p>
+      </div>
+      <div *ngIf="selectedCompte === '2'" class="card-body">
+        <h5>Compte Epargne</h5>
+        <p class="card-text">Numero de Compte : {{clientDetails.compteEp.numeroCompte}}</p>
+        <p class="card-text">Date d'ouverture : {{clientDetails.compteEp.date}}</p>
+        <!-- <h6 class="card-subtitle mb-2 text-muted">Solde : </h6> -->
+        <p class="card-text">Solde : {{clientDetails.compteEp.solde}}</p>
+        <!-- <h6 class="card-subtitle mb-2 text-muted">decouvert: </h6> -->
+        <p class="card-text">Intérêt : {{clientDetails.compteEp.interet}}%</p>
+        <p><span>You selected: </span><b>{{selectedCompte}}</b></p>
+      </div>
+    </div>
   </div>
 </div>
-
-
-  </div>
-</div>
-
-
-

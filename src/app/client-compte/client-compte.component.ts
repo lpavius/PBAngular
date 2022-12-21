@@ -12,6 +12,7 @@ export class ClientCompteComponent implements OnInit {
 
   id = this.activatedRoute.snapshot.params['id'];
   clientDetails : any= {};
+  selectedCompte = '1';
 
 
   constructor(private service: ClientService, private activatedRoute: ActivatedRoute, private router: Router) {
@@ -30,12 +31,15 @@ export class ClientCompteComponent implements OnInit {
     //     this.router.navigate(['/clients-list'])
       this.router.navigate(['/clients-list']);
         return false;
+  }
 
-    }
-    gotoList() {
+  gotoList() {
       this.router.navigate(['/clients-list']);
       return false;
   }
 
-
+  onSelected(event: any): void {
+    this.selectedCompte = event.target.value
   }
+
+}
