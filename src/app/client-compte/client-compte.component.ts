@@ -13,7 +13,7 @@ export class ClientCompteComponent implements OnInit {
   id = this.activatedRoute.snapshot.params['id'];
   clientDetails : any= {};
   selectedCompte = '1';
-
+  testdate: any
 
   constructor(private service: ClientService, private activatedRoute: ActivatedRoute, private router: Router) {
     this.clientDetails = new Client;
@@ -24,9 +24,17 @@ export class ClientCompteComponent implements OnInit {
     this.service.getClient(this.id).subscribe((data: {}) =>
     {
       this.clientDetails = data;
+      this.clientDetails.cc.solde = (this.clientDetails.cc.solde).toFixed(2)
+      this.clientDetails.cc.decouvert = (this.clientDetails.cc.decouvert).toFixed(2)
+      this.clientDetails.compteEp.solde = (this.clientDetails.compteEp.solde).toFixed(2)
     })
   }
-  showCompte(){
+
+  onSelected(event: any): void {
+    this.selectedCompte = event.target.value
+  }
+
+  /*showCompte(){
     // this.service.showCompte(this.id, this.clientDetails).subscribe(data =>{
     //     this.router.navigate(['/clients-list'])
       this.router.navigate(['/clients-list']);
@@ -36,10 +44,8 @@ export class ClientCompteComponent implements OnInit {
   gotoList() {
       this.router.navigate(['/clients-list']);
       return false;
-  }
+  }*/
 
-  onSelected(event: any): void {
-    this.selectedCompte = event.target.value
-  }
+
 
 }

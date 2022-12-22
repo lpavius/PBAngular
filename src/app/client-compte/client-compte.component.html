@@ -14,20 +14,19 @@
         <p class="card-text">Numero de Compte : {{clientDetails.cc.numeroCompte}}</p>
         <p class="card-text">Date d'ouverture : {{clientDetails.cc.date}}</p>
         <!-- <h6 class="card-subtitle mb-2 text-muted">Solde : </h6> -->
-        <p class="card-text">Solde : {{clientDetails.cc.solde}}</p>
+        <p class="card-text">Solde : {{clientDetails.cc.solde}}€</p>
         <!-- <h6 class="card-subtitle mb-2 text-muted">decouvert: </h6> -->
-        <p class="card-text">Découvert : {{clientDetails.cc.decouvert}}</p>
-        <p><span>You selected: </span><b>{{selectedCompte}}</b></p>
+        <p class="card-text">Découvert : {{clientDetails.cc.decouvert}}€</p>
+        <p> {{ clientDetails.cc.date }} aujourd'hui</p>
       </div>
       <div *ngIf="selectedCompte === '2'" class="card-body">
         <h5>Compte Epargne</h5>
         <p class="card-text">Numero de Compte : {{clientDetails.compteEp.numeroCompte}}</p>
         <p class="card-text">Date d'ouverture : {{clientDetails.compteEp.date}}</p>
         <!-- <h6 class="card-subtitle mb-2 text-muted">Solde : </h6> -->
-        <p class="card-text">Solde : {{clientDetails.compteEp.solde}}</p>
+        <p class="card-text">Solde : {{clientDetails.compteEp.solde}}€</p>
         <!-- <h6 class="card-subtitle mb-2 text-muted">decouvert: </h6> -->
         <p class="card-text">Intérêt : {{clientDetails.compteEp.interet}}%</p>
-        <p><span>You selected: </span><b>{{selectedCompte}}</b></p>
       </div>
     </div>
   </div>
