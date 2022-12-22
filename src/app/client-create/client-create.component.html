@@ -4,16 +4,33 @@
             <h3 class="mb-3 text-center">Créer un Client</h3>
 
             <div class="form-group">
-                <input type="text" [(ngModel)]="clientDetails.nom" name="nom"  class="form-control" placeholder="Nom" >
-                <input type="text" [(ngModel)]="clientDetails.prenom" name="prenom"  class="form-control" placeholder="Prenom">
-                <!-- <input type="text" [(ngModel)]="clientDetails.login" name="login"  class="form-control" placeholder="Login"> -->
-                <input type="text" [(ngModel)]="clientDetails.telephone" name="telephone"  class="form-control"
-                        placeholder="Telephone">
-                <input type="text" [(ngModel)]="clientDetails.adresse.rue" name="adresss"  class="form-control" placeholder="Adresse">
-                <input type="text" [(ngModel)]="clientDetails.adresse.codePostal" name="codepostal"  class="form-control" placeholder="Code Postal">
+                <input type="text" [(ngModel)]="clientDetails.nom" name="nom" class="form-control" placeholder="Nom" required #nom="ngModel">
+                <div class="card-panel red accent-1" [hidden]="nom.valid || nom.pristine">
+                    Nom requis
+                </div>
+                <input type="text" [(ngModel)]="clientDetails.prenom" name="prenom"  class="form-control" placeholder="Prenom" required #prenom="ngModel">
+                <div class="card-panel red accent-1" [hidden]="prenom.valid || prenom.pristine">
+                    prenom requis
+                </div>
+                <input type="tel" [(ngModel)]="clientDetails.telephone" name="telephone"  class="form-control"
+                        placeholder="Telephone" required #tel="ngModel">
+                <div class="card-panel red accent-1" [hidden]="tel.valid || tel.pristine">
+                    telephone requis
+                </div>
+                <input type="text" [(ngModel)]="clientDetails.adresse.rue" name="adresss"  class="form-control" placeholder="Adresse" required #adresse="ngModel">
+                <div class="card-panel red accent-1" [hidden]="adresse.valid || adresse.pristine">
+                    adresse requis
+                </div>
+                <input type="text" [(ngModel)]="clientDetails.adresse.codePostal" name="codepostal"  class="form-control" placeholder="Code Postal" required #cp="ngModel">
+                <div class="card-panel red accent-1" [hidden]="cp.valid || cp.pristine">
+                    code postal requis
+                </div>
                 <input type="text" [(ngModel)]="clientDetails.adresse.ville" name="ville"  class="form-control"
-                        placeholder="Ville"> <br>
-                <button class="btn btn-success btn-lg btn-block" (click)="addClient()">Ajouter</button>
+                        placeholder="Ville" required #ville="ngModel">
+                <div class="card-panel red accent-1" [hidden]="ville.valid || ville.pristine">
+                    ville requis
+                </div>
+                <button class="btn btn-success btn-lg btn-block" (click)="addClient()" [disabled]="!mainForm.form.valid">Ajouter</button>
             </div>
         </form>
     </div>
