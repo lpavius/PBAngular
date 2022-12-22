@@ -26,7 +26,7 @@ export class ClientEditComponent implements OnInit {
   }
 
   updateClient() {
-    if ( window.confirm('Are you sure, you want to update?')) {
+    if ( window.confirm('Etes-vous sûr de vouloir mettre à jour?')) {
       this.service.updateClient(this.id, this.clientDetails).subscribe(data => {
         this.router.navigate(['/clients-list'])
       })
